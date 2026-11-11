@@ -1,0 +1,98 @@
+import datetime
+from dataclasses import dataclass
+
+
+@dataclass
+class SearchAdvertData:
+    advert_id: str
+    snapshot_date: datetime.date | None
+
+    title: str
+    short_description: str | None
+
+    price: int | None
+    currency: str | None
+
+    scraped_at: datetime.datetime | None
+    url: str
+
+
+@dataclass
+class AdvertProcessingData:
+    """Advert details from light crawl"""
+    advert_id: str
+
+    province: str | None
+    city: str | None
+
+
+@dataclass
+class AdvertDetails:
+    advert_id: str
+
+    # Add units
+    engine_size_cm3: int | None
+    engine_power_hp: int | None
+
+    year: int | None
+    mileage: int | None
+    mileage_unit: str | None
+
+    province: str | None
+    city: str | None
+
+    body_type: str | None
+    gearbox: str | None
+    fuel_type: str | None
+
+    make: str | None
+    model: str | None
+    version: str | None
+    generation: str | None
+    drive_type: str | None
+    color: str | None
+
+    no_accident: bool | None
+    country_origin: str | None
+    service_record: bool | None
+    new_used: str | None
+    registered_pl: bool | None
+
+    damaged: bool | None
+    historical_vehicle: bool | None
+    has_registration: bool | None
+    tuning: bool | None
+    original_owner: bool | None
+    long_description: str | None
+    seller_type: str | None
+    dealer_type: str | None
+
+    first_seen_at: datetime.date | None
+
+
+@dataclass
+class ScraperRunsInfo:
+    """Scraper run details"""
+    run_date: datetime.date | None
+    run_time: str | None
+    listings_scraped: int | None
+    new_listings: int | None
+    duplicates: int | None
+    id_mismatch: int | None
+    missing_mileage: int | None
+    missing_version: int | None
+    missing_gearbox: int | None
+    missing_drive_type: int | None
+    missing_fuel_type: int | None
+    missing_size: int | None
+    missing_power: int | None
+    missing_year: int | None
+    log_warnings: int | None
+
+
+@dataclass
+class ExchangeRate:
+    """Exchange rates for EUR PLN"""
+    rate_date: datetime.date | None
+    currency: str | None
+    rate: float | None
