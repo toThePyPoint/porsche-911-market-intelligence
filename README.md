@@ -30,6 +30,7 @@ The goal is not simply to build a scraper or a dashboard, but to demonstrate how
     </td>
   </tr>
 </table>
+
 ---
 
 ## 🎯 Project objectives
